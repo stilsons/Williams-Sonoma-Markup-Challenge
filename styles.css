@@ -1,0 +1,44 @@
+
+#brand-logo {
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+}
+.newspaper {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+#menu1, #menu2, #menu3, #menu4, #menu5, #menu6, #menu7, #menu8, #menu9, #menu10, #menu11 {
+	display: none;
+	position: absolute;
+	font-size: 10px;
+	z-index: 1000;
+	background-color:#e0e0eb; 
+	font-family: Sans-Serif;
+	text-decoration: none !important;
+}
+.box {
+	width:1000px;
+	height:1000px;
+}
+ 
+.grey {
+	background:#e0e0eb;
+}
+.title { 
+	font-size: "150%";
+	font-weight: bold;
+}
+#description {
+	font-size: 10;	
+}
+
+#section1collapsedarrow, #section2collapsedarrow, #section3collapsedarrow { display: none; }
+
+#section1expandedarrow, #section2expandedarrow,
+#section3expandedarrow, #section1title, #section2title, #section3title, #thumbnailblue, #thumbnailstriped, #thumbnailwhite, #thumbnailpink
+{
+    display:inline;
+}

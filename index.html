@@ -1,0 +1,1815 @@
+<html>
+<head>
+<link rel="stylesheet" type=" text/css" href="styles.css"> 
+<script>
+  function show(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  function hide(id) {
+    document.getElementById(id).style.display = "none"; 	
+  }
+  function toggle(id) {
+      if (document.getElementById(id+"title").innerHTML == "COLLAPSED")
+		  {
+			  document.getElementById(id+"title").innerHTML = "EXPANDED";
+			  document.getElementById(id+"text").style.display = "inline";
+			  document.getElementById(id+"expandedarrow").style.display = "inline";
+			  hide(id+"collapsedarrow");
+		  } else
+		  {
+			  document.getElementById(id+"title").innerHTML = "COLLAPSED";
+			  hide(id+"text");
+			  document.getElementById(id+"collapsedarrow").style.display = "inline";
+			  hide(id+"expandedarrow");
+		  }  
+ 	}
+	function choose(color) {
+		// alert("Now in the choose function with " + color);
+		document.getElementById("colorfield").value = color;
+    	divs = document.getElementsByClassName('colortext');
+			[].slice.call( divs ).forEach(function ( div ) {
+    		div.innerHTML = color; });
+		document.getElementById("thumbnailBlue").style = "border: 0px solid black;"
+		document.getElementById("thumbnailStriped").style = "border: 0px solid black;"
+		document.getElementById("thumbnailWhite").style = "border: 0px solid black;"
+		document.getElementById("thumbnailPink").style = "border: 0px solid black;"
+		document.getElementById("thumbnail"+color).style = "border: 3px solid black;"
+		var letter = "a";
+		if (color == "Blue") { letter = "a"; }
+		if (color == "Striped") { letter = "b"; }
+		if (color == "White") { letter = "c"; }
+		if (color == "Pink") { letter = "d"; }
+		document.getElementById("bigpicture").src = "assets/product-large-" + letter + ".jpg";
+	}
+</script>
+</head>
+<body style="z-index: 1; position:relative; ">
+
+<div id="brand-logo"><a href="www.williamssonoma.com"><img src="assets\logo.png" alt="Williams Sonoma"></a></div>
+<p>
+<img src = "assets/Menubar.png" usemap="#menumap">
+<map name="menumap">
+    <area shape="rect" coords="0,0, 75, 50" href="http://www.williams-sonoma.com/?cm_type=gnav" alt="Cookware" onMouseOver="show('menu1')" onMouseOut="hide('menu1');">
+    <area shape="rect" coords="75,0, 175, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav"  alt="Cooks' Tools" onMouseOver="show('menu2')" onMouseOut="hide('menu2');">
+    <area shape="rect" coords="175,0, 250, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav" alt="Cutlery" onMouseOver="show('menu3')" onMouseOut="hide('menu3');">
+    <area shape="rect" coords="250,0, 325, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav" alt="Electrics" onMouseOver="show('menu4')" onMouseOut="hide('menu4');">
+    <area shape="rect" coords="325,0, 400, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav" alt="Bakeware" onMouseOver="show('menu5')" onMouseOut="hide('menu5');">
+    <area shape="rect" coords="400,0, 475, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav"  alt="Food" onMouseOver="show('menu6')" onMouseOut="hide('menu6');">
+    <area shape="rect" coords="475,0,550, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav"  alt="Tabletop & Bar" onMouseOver="show('menu7')" onMouseOut="hide('menu7');">
+    <area shape="rect" coords="550,0, 675, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav" alt="Homekeeping" onMouseOver="show('menu8')" onMouseOut="hide('menu8');">
+    <area shape="rect" coords="675,0, 750, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav"  alt="Outdoor" onMouseOver="show('menu9')" onMouseOut="hide('menu9');">
+    <area shape="rect" coords="750,0, 825, 50" href="http://www.williams-sonoma.com/shop/electrics/?cm_type=gnav"  alt="Sale" onMouseOver="show('menu10')" onMouseOut="hide('menu10');">
+    <area shape="rect" coords="825,0, 950, 50" href="http://www.williams-sonoma.com/pages/williams-sonoma-home?cm_type=gnav"  alt="Williams Sonoma Home" >
+</map>
+
+<div id="menu1" ><!-- by default invisible -->
+<table><tr><td style=" vertical-align: top;">
+<b>Shop by Category</b><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-sets/?cm_type=gnav" >
+Cookware Sets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/fry-pans-skillets/?cm_type=gnav" >
+Fry Pans &amp; Skillets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/saute-pans/?cm_type=gnav" >
+Saut&#233; Pans
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/saucepans-sauciers/?cm_type=gnav" >
+Saucepans
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/grills-griddles/?cm_type=gnav" >
+Grill Pans &amp; Griddles
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/dutch-ovens-braisers/?cm_type=gnav" >
+Dutch Ovens &amp; Braisers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/stock-soup-multi-pots/?cm_type=gnav" >
+Stock &amp; Multipots
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/roasters/?cm_type=gnav" >
+Roasters
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-ovenware/?cm_type=gnav" >
+Ovenware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/teakettles/?cm_type=gnav" >
+Tea Kettles
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/specialty-cookware/?cm_type=gnav" >
+Specialty Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/woks/?cm_type=gnav" >
+Woks
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/international-cookware/?cm_type=gnav" >
+International Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-outdoor/?cm_type=gnav" >
+Outdoor Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-pot-rack/?cm_type=gnav" >
+Pot Racks
+</a><br><br>
+<b>Shop by Material</b><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/stainless-steel-cookware/?cm_type=gnav" >
+Stainless-Steel Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-cast-iron/?cm_type=gnav" >
+Cast-Iron Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/nonstick-cookware/?cm_type=gnav" >
+Nonstick Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-ceramic-nonstick/?cm_type=gnav" >
+Ceramic Nonstick Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-copper/?cm_type=gnav" >
+Copper Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-induction/?cm_type=gnav" >
+Induction Cookware
+	</a></td><td style="vertical-align: top;" >
+<b>Shop by Brand</b><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-williams-sonoma/?cm_type=gnav" >
+Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-all-clad/?cm_type=gnav" >
+All-Clad
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-le-creuset/?cm_type=gnav" >
+Le Creuset
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-berndes/?cm_type=gnav" >
+Berndes
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-calphalon/?cm_type=gnav" >
+Calphalon
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-chantal/?cm_type=gnav" >
+Chantal
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-cristel/?cm_type=gnav" >
+Cristel
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-de-buyer/?cm_type=gnav" >
+de Buyer
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-demeyere/?cm_type=gnav" >
+Demeyere
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-emile-henry/?cm_type=gnav" >
+Emile Henry
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/fagor-cookware/?cm_type=gnav" >
+Fagor
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-fissler/?cm_type=gnav" >
+Fissler
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-finex/?cm_type=gnav" >
+FINEX
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-greenpan/?cm_type=gnav" >
+GreenPan&#8482;
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-hestan/?cm_type=gnav" >
+Hestan
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-junior-chef/?cm_type=gnav" >
+Junior Chef
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-kitchenaid/?cm_type=gnav" >
+KitchenAid&#174;
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-lagostina/?cm_type=gnav" >
+Lagostina
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/lodge-cookware/?cm_type=gnav" >
+Lodge
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-mauviel/?cm_type=gnav" >
+Mauviel 1830
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-nordic-ware/?cm_type=gnav" >
+Nordic Ware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-revol/?cm_type=gnav" >
+Revol
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-riess/?cm_type=gnav" >
+Riess
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-ruffoni/?cm_type=gnav" >
+Ruffoni
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-scanpan/?cm_type=gnav" >
+Scanpan
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-staub/?cm_type=gnav" >
+Staub
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-swiss-diamond/?cm_type=gnav" >
+Swiss Diamond
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-wolf-gourmet/?cm_type=gnav" >
+Wolf Gourmet
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-zwilling/?cm_type=gnav" >
+Zwilling J.A. Henckels
+	</a></td><td style= "vertical-align: top;" >
+<b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/new/new-indian-kitchen/?cm_type=gnav" >
+The Indian Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/new/global-inspirations-japan/?cm_type=gnav" >
+The Japanese Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/european-cookware?cm_type=gnav" >
+European Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-under-100/?cm_type=gnav" >
+Cookware Under $100
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-monogram-shop/?cm_type=gnav" >
+Monogram Shop
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-registry-favorites/?cm_type=gnav" >
+Registry Favorites
+</a><br><br>
+<b>Sale &amp; Offers</b><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/products/all-clad-d5-stainless-steel-10-piece-cookware-set/?cm_type=gnav" >
+All-Clad d5 10-Piece Cookware Set - Over 40% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-all-clad/all-clad-special-values/?cm_type=gnav" >
+All-Clad Favorites - Up to 45% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-le-creuset/?cm_type=gnav" >
+Le Creuset Favorites - Up to 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-calphalon/calphalon-elite-breakfast-promo/?cm_type=gnav" >
+Calphalon Breakfast Favorites - Over 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-pot-rack/?cm_type=gnav" >
+Enclume Pot Racks - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/specialty-cookware/breakfast-pans/?cm_type=gnav" >
+Omelette Pans - Up to 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cookware/cookware-staub/staub-cast-iron/?cm_type=gnav" >
+Staub 4-Qt. Round Cocotte - Now $129.95
+	</a><br></td></tr></table>
+	</div>
+	
+<div id="menu2" ><!-- by default invisible -->
+<table>
+	<tr><td style=" vertical-align: top;"><b>Utensils</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/utensils-view-all/?cm_type=gnav" >
+All Utensils
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/turner-spatulas/?cm_type=gnav" >
+Spatulas &amp; Turners
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/spoons-ladles/?cm_type=gnav" >
+Spoons &amp; Ladles
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tongs/?cm_type=gnav" >
+Tongs &amp; Forks
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/whisks-egg-beaters/?cm_type=gnav" >
+Whisks &amp; Egg Beaters
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tool-sets/?cm_type=gnav" >
+Tool Sets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-utensil-holders/?cm_type=gnav" >
+Utensil Holders
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-utensils-material/?cm_type=gnav" >
+Utensils by Material
+</a><br>
+<b>Essential Tools &amp; Gadgets</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/vegetable-tools/?cm_type=gnav" >
+Vegetable Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/fruit-tools/?cm_type=gnav" >
+Fruit &amp; Citrus Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/garlic-herb-tools/?cm_type=gnav" >
+Garlic &amp; Herb Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-meat-poultry-seafood/?cm_type=gnav" >
+Meat, Poultry &amp; Seafood Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/timer-thermometer-scale/?cm_type=gnav" >
+Thermometers &amp; Timers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/strainers-colanders/?cm_type=gnav" >
+Colanders &amp; Strainers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/food-mills/?cm_type=gnav" >
+Food Mills &amp; Ricers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/can-openers/?cm_type=gnav" >
+Can Openers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/splatter-screens/?cm_type=gnav" >
+Splatter Screens
+</a><br>
+<b>Specialty Tools</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/pizza-pasta-tools/?cm_type=gnav" >
+Pasta &amp; Pizza Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/baking-pastry-tools/?cm_type=gnav" >
+Baking &amp; Pastry Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/egg-tools/?cm_type=gnav" >
+Egg Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cheese-tools/?cm_type=gnav" >
+Cheese Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-grill-tools-accessories/?cm_type=gnav" >
+Grill Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/ice-cream-tools-pops/?cm_type=gnav" >
+Ice Cream Tools &amp; Pops
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/mortars-pestles/?cm_type=gnav" >
+Mortars &amp; Pestles
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-canning-preserving/?cm_type=gnav" >
+Canning &amp; Preserving
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-smart-tools/?cm_type=gnav" >
+Smart Tech Tools
+	</a><br></td>
+	<td style=" vertical-align: top;"><b>Seasoning &amp; Oil</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/salt-pepper-mills/?cm_type=gnav" >
+Salt &amp; Pepper Mills
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/spice-nut-tools/?cm_type=gnav" >
+Spice &amp; Nut Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/oil-dispeners/?cm_type=gnav" >
+Oil Dispensers
+</a><br>
+<b>Cut, Slice &amp; Chop</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-spiralizers/?cm_type=gnav" >
+Spiralizers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/mandolines-slicers/?cm_type=gnav" >
+Mandolines &amp; Slicers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/choppers/?cm_type=gnav" >
+Choppers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/slicers-graters-peelers/?cm_type=gnav" >
+Graters &amp; Peelers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-kitchen-shears/?cm_type=gnav" >
+Kitchen Shears
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cutting-boards/?cm_type=gnav" >
+Cutting Boards
+</a><br>
+<b>Mix &amp; Measure</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/measuring-cups-spoons/?cm_type=gnav" >
+Measuring Cups &amp; Spoons
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/kitchen-scales/?cm_type=gnav" >
+Kitchen Scales
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-mixing-bowls/?cm_type=gnav" >
+Mixing Bowls
+</a><br>
+<b>Bar &amp; Beverage</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cook-bar-tools/?cm_type=gnav" >
+Bar Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cook-wine-tools/?cm_type=gnav" >
+Wine Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-beverage/?cm_type=gnav" >
+Tea &amp; Beverage Tools
+</a><br>
+<b>Cookbooks</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cookbooks-all/?cm_type=gnav" >
+All Cookbooks
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/williams-sonoma-cookbooks/?cm_type=gnav" >
+Williams Sonoma Cookbooks
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cookbooks-celebrity/?cm_type=gnav" >
+Celebrities, Chefs &amp; Restaurants
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cookbook-holder-recipe-storage/?cm_type=gnav" >
+Cookbook Holders &amp; Recipe Storage
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/digital-cookbooks?cm_type=gnav" >
+Digital Cookbooks
+		</a><br></td>
+		<td style=" vertical-align: top;"><b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/new/new-indian-kitchen/?cm_type=gnav" >
+The Indian Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/new/global-inspirations-japan/?cm_type=gnav" >
+The Japanese Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-breakfast/?cm_type=gnav" >
+Breakfast Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-salad-tools/?cm_type=gnav" >
+Salad Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cook-tool-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-registry-favorites/?cm_type=gnav" >
+Registry Favorites
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-monogram-shop/?cm_type=gnav" >
+Monogram Shop
+</a><br>
+<b>Sale &amp; Offers</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-american-girl/?cm_type=gnav" >
+American Girl&#8482; - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/kitchen-scales/?cm_type=gnav" >
+Food Scales - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-fruit-vegetable-promo/?cm_type=gnav" >
+Fruit &amp; Veggie Tools - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/oil-dispeners/?cm_type=gnav" >
+Oil Dispensers - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-spiralizers/?cm_type=gnav" >
+Spiralizers - Up to 40% Off
+</a><br>
+<b>Shop by Brand</b><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-williams-sonoma/?cm_type=gnav" >
+Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-ws-open-kitchen/?cm_type=gnav" >
+Williams Sonoma Open Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-all-clad/?cm_type=gnav" >
+All-Clad
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-american-girl/?cm_type=gnav" >
+American Girl&#8482; by Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-chefn/?cm_type=gnav" >
+Chef'n
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-cole-mason/?cm_type=gnav" >
+Cole &amp; Mason
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/crafthouse-bar-tools/?cm_type=gnav" >
+Crafthouse by Fortessa Bar Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-epicurean/?cm_type=gnav" >
+Epicurean
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-junior-chef/?cm_type=gnav" >
+Junior Chef
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-le-creuset/?cm_type=gnav" >
+Le Creuset
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-littledeer/?cm_type=gnav" >
+Littledeer
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-microplane/?cm_type=gnav" >
+Microplane&#174;
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-oxo/?cm_type=gnav" >
+OXO
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-paderno/?cm_type=gnav" >
+Paderno
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/peugeot/?cm_type=gnav" >
+Peugeot
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-revol/?cm_type=gnav" >
+Revol
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-rosle/?cm_type=gnav" >
+R&#246;sle
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-star-wars/?cm_type=gnav" >
+Star Wars&#8482;
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/tools-west-blade/?cm_type=gnav" >
+Williams Sonoma West Blade
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cooks-tools/cooks-tools-zoku/?cm_type=gnav" >
+Zoku
+		</a><br></td></tr></table> </div><!-- End menu 2 -->
+<div id="menu3" ><!-- by default invisible -->
+
+<table><tr><td style=" vertical-align: top;"><b>Shop by Category</b><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knife-sets/?cm_type=gnav" >
+Knife Sets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-chef-knives/?cm_type=gnav" >
+Chef's Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-santoku-knives/?cm_type=gnav" >
+Santoku Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutting-boards-storage/?cm_type=gnav" >
+Cutting Boards
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-blocks-storage/?cm_type=gnav" >
+Knife Storage
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knife-sharpeners-honing/?cm_type=gnav" >
+Knife Sharpeners
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/steak-knives/?cm_type=gnav" >
+Steak Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/paring-knives/?cm_type=gnav" >
+Paring Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/bread-knives/?cm_type=gnav" >
+Bread Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/slicing-carving-knives/?cm_type=gnav" >
+Slicing &amp; Carving Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/utility-knives/?cm_type=gnav" >
+Utility Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cleavers-boning-knives/?cm_type=gnav" >
+Cleavers &amp; Boning Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cheese-knives/?cm_type=gnav" >
+Cheese Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/fruit-vegetable-knives/?cm_type=gnav" >
+Fruit &amp; Vegetable Knives
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/kitchen-shears/?cm_type=gnav" >
+Kitchen Shears
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/ceramic-knives/?cm_type=gnav" >
+Ceramic Knives
+	</a><br></td><td style=" vertical-align: top;">
+<b>Shop by Brand</b><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-ws-cutting-boards/?cm_type=gnav" >
+Williams-Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-wusthof/?cm_type=gnav" >
+W&#252;sthof
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-shun/?cm_type=gnav" >
+Shun
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-global/?cm_type=gnav" >
+Global
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-boos-cutting-boards/?cm_type=gnav" >
+John Boos &amp; Co.
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-calphalon/?cm_type=gnav" >
+Calphalon
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-chefs-choice/?cm_type=gnav" >
+Chef'sChoice
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-chicago-cutlery/?cm_type=gnav" >
+Chicago Cutlery
+	</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-cuisinart/?cm_type=gnav" >
+Cuisinart
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/e-dehillerin/?cm_type=gnav" >
+E.Dehillerin
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/epicurean/?cm_type=gnav" >
+Epicurean
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-ivo/?cm_type=gnav" >
+IVO
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-kai/?cm_type=gnav" >
+KAI
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-kikuichi/?cm_type=gnav" >
+Kikuichi
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-kitchenaid/?cm_type=gnav" >
+KitchenAid
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-kyocera/?cm_type=gnav" >
+Kyocera
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-laguiole-en-aubrac/?cm_type=gnav" >
+Laguiole en Aubrac
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-laguiole-jean-dubost/?cm_type=gnav" >
+Laguiole Jean Dubost
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-nesmuk/?cm_type=gnav" >
+Nesmuk
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-messermeister/?cm_type=gnav" >
+Messermeister
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-michel-bras/?cm_type=gnav" >
+Michel Bras
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-oaks-bottom-forge-knives/?cm_type=gnav" >
+Oaks Bottom Forge
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-sabatier/?cm_type=gnav" >
+Sabatier
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/knives-victorinox/?cm_type=gnav" >
+Victorinox
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/electrics-wolf-gourmet/?cm_type=gnav" >
+Wolf Gourmet
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/zwilling-henckels-knives/?cm_type=gnav" >
+Zwilling J.A. Henckels
+	</a><br></td><td style=" vertical-align: top;">
+<b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-values-new/?cm_type=gnav" >
+This Season's Sharpest Values
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-junior-chef/?cm_type=gnav" >
+Junior Chef
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-monogram-shop/?cm_type=gnav" >
+Monogram Shop
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-registry-favorites/?cm_type=gnav" >
+Registry Favorites
+</a><br>
+<b>Sale &amp; Offers</b><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-values/?cm_type=gnav" >
+Our Favorite Cutlery Deals - Up to 65% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/wusthof-values-promo/?cm_type=gnav" >
+W&#252;sthof Cutlery - Up to 65% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/shun-favorites-promo/?cm_type=gnav" >
+Shun Cutlery - Up to 55% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/global-cutlery-deals/?cm_type=gnav" >
+Global Cutlery - Up to 55% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/zwilling-values-promo/?cm_type=gnav" >
+Zwilling Cutlery - Up to 65% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/cutlery/cutlery-chefs-choice/?cm_type=gnav" >
+Chef'sChoice Pro Sharpener - 20% off
+</a><br>
+	</td></tr></table></div> <!-- End menu 3 -->
+<div id="menu4" >
+<table><tr><td style=" vertical-align: top;">	
+<b>Small Appliances</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/blenders/?cm_type=gnav" >
+Blenders
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-juicers/?cm_type=gnav" >
+Juicers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/food-processors/?cm_type=gnav" >
+Food Processors
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/mixers-attachments/?cm_type=gnav" >
+Mixers &amp; Attachments
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/toasters-ovens/?cm_type=gnav" >
+Toasters &amp; Ovens
+</a><br>
+<b>Coffee &amp; Tea</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/coffee-makers/?cm_type=gnav" >
+Coffee Makers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/espresso-makers/?cm_type=gnav" >
+Espresso Makers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-teakettles/?cm_type=gnav" >
+Tea Kettles
+</a><br>
+<b>Specialty Electrics</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-ice-cream-makers/?cm_type=gnav" >
+Ice Cream Makers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-pasta-machines/?cm_type=gnav" >
+Pasta Machines
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/grills-panini-presses/?cm_type=gnav" >
+Indoor Grills &amp; Panini Presses
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/popcorn-makers/?cm_type=gnav" >
+Popcorn Makers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/waffle-bread-makers/?cm_type=gnav" >
+Waffle Makers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-breakfast-bread-yogurt/?cm_type=gnav" >
+Breakfast Electrics
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/pressure-rice-slow-cookers/?cm_type=gnav" >
+Slow Cookers &amp; Pressure Cookers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-fryers/?cm_type=gnav" >
+Fryers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-specialty-cookware/?cm_type=gnav" >
+Electric Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-woks-skillet/?cm_type=gnav" >
+Woks &amp; Skillets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-dehydrators/?cm_type=gnav" >
+Dehydrators
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/smart-tools-electrics/?cm_type=gnav" >
+Smart Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-sous-vide-machines/?cm_type=gnav" >
+Sous Vide
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/cooking-for-baby/?cm_type=gnav" >
+Cooking for Baby
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/sparkling-water-machines/?cm_type=gnav" >
+Sparkling Water Machines
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-vacuums-bags-filters/?cm_type=gnav" >
+Vacuums
+</a><br>
+<b>Large Appliances</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/wine-beer-fridge/?cm_type=gnav" >
+Wine &amp; Beer
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/electrics/stoves/?cm_type=gnav" >
+Stoves
+</a><br><b>Shop by Brand</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-breville/?cm_type=gnav" >
+Breville
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-vitamix/?cm_type=gnav" >
+Vitamix
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-kitchenaid/?cm_type=gnav" >
+KitchenAid
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-all-clad/?cm_type=gnav" >
+All-Clad
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-cuisinart/?cm_type=gnav" >
+Cuisinart
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-hestan/?cm_type=gnav" >
+Hestan
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-jura/?cm_type=gnav" >
+Jura
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-kenwood/?cm_type=gnav" >
+Kenwood
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-lagrange/?cm_type=gnav" >
+Lagrange
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-magimix/?cm_type=gnav" >
+Magimix by Robot-Coupe
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-miele/?cm_type=gnav" >
+Miele
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-nespresso/?cm_type=gnav" >
+Nespresso
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-oxo/?cm_type=gnav" >
+OXO
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-philips/?cm_type=gnav" >
+Philips
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-saeco/?cm_type=gnav" >
+Saeco
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-technivorm/?cm_type=gnav" >
+Technivorm
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-waring/?cm_type=gnav" >
+Waring
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/williams-sonoma-electrics/?cm_type=gnav" >
+Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/ws-signature-touch-electrics/?cm_type=gnav" >
+Williams Sonoma Signature Touch
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-open-kitchen/?cm_type=gnav" >
+Williams Sonoma Open Kitchen
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/electrics/wolf-gourmet/?cm_type=gnav" >
+Wolf Gourmet
+</a><br><b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-registry-favorites/?cm_type=gnav" >
+Registry Favorites
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/new/new-copper-shop/?cm_type=gnav" >
+The Copper Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-juicing-shop/?cm_type=gnav" >
+Juice Shop
+</a><br>
+<b>Sale &amp; Offers</b><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/pressure-rice-slow-cookers/?cm_type=gnav" >
+Select All-Clad Slow Cookers - Up to 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-fryers/?cm_type=gnav" >
+Philips Avance Airfryer - 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-nespresso/?cm_type=gnav" >
+Select Nespresso Machines - 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-pro-line-promo/?cm_type=gnav" >
+KitchenAid&#174; Pro Line - Up to 35% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/products/nespresso-delonghi-lattissima-touch/?cm_type=gnav" >
+Delonghi Lattissima Espresso Maker - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/products/breville-crispy-crust-pizza-maker/?cm_type=gnav" >
+Breville Pizza Maker - Now $99.95
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-kitchenaid/kitchenaid-multicookers/?cm_type=gnav" >
+KitchenAid&#174; Multicookers - Over 45% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/electrics/electrics-kitchenaid/?cm_type=gnav" >
+KitchenAid - Up to $50 Mail-In Rebate
+	</a></td></tr></table></div>
+<div id="menu5" >
+<table><tr><td style=" vertical-align: top;">
+<b>Shop by Category</b><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-sets/?cm_type=gnav" >
+Bakeware Sets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bread-pans-loaf-pans/?cm_type=gnav" >
+Bread &amp; Loaf Pans
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/cake-pans/?cm_type=gnav" >
+Cake Pans
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/sheet-pans-cookie-sheets/?cm_type=gnav" >
+Cookie Sheets &amp; Baking Sheets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/cupcake-muffin-pans/?cm_type=gnav" >
+Cupcake &amp; Muffin Pans
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/cookie-cutters-pancake-molds/?cm_type=gnav" >
+Cookie Cutters &amp; Pancake Molds
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/pie-pans-tart-pans/?cm_type=gnav" >
+Pie Dishes &amp; Tart Pans
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-baking-dish/?cm_type=gnav" >
+Baking Dishes
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/baking-pastry-tools-bakeware/?cm_type=gnav" >
+Baking &amp; Pastry Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-decorating-tools/?cm_type=gnav" >
+Decorating Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-measuring-cups-spoons/?cm_type=gnav" >
+Measuring Cups &amp; Spoons
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-mixing-bowls/?cm_type=gnav" >
+Mixing Bowls
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-pizza-tools/?cm_type=gnav" >
+Pizza Stones &amp; Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-scales/?cm_type=gnav" >
+Scales
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/baking-mixes-ingredients/?cm_type=gnav" >
+Baking Mixes &amp; Ingredients
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/bakeware/gift-packaging/?cm_type=gnav" >
+Gift Packaging
+</a><br><b>Shop by Brand</b><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-williams-sonoma/?cm_type=gnav" >
+Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-all-clad/?cm_type=gnav" >
+All-Clad
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-american-girl/?cm_type=gnav" >
+American Girl&#8482; by Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-ateco/?cm_type=gnav" >
+Ateco
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-calphalon/?cm_type=gnav" >
+Calphalon
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-emile-henry/?cm_type=gnav" >
+Emile Henry
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-kitchenaid/?cm_type=gnav" >
+KitchenAid&#174;
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/le-creuset-bakeware/?cm_type=gnav" >
+Le Creuset
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-nordic-ware/?cm_type=gnav" >
+Nordic Ware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-revol/?cm_type=gnav" >
+Revol
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-staub/?cm_type=gnav" >
+Staub
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-star-wars/?cm_type=gnav" >
+Star Wars&#8482;
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-usa-pan/?cm_type=gnav" >
+USA Pan
+</a><br><b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-valentines-day/?cm_type=gnav" >
+Valentine's Day Baking
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-easter/?cm_type=gnav" >
+Easter Baking
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/european-bakeware/?cm_type=gnav" >
+European Bakeware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-junior-chef/?cm_type=gnav" >
+Junior Chef
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-top-10-gfits/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-registry-favorites/?cm_type=gnav" >
+Registry Favorites
+</a><br>
+<b>Sale &amp; Offers</b><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-american-girl/?cm_type=gnav" >
+American Girl&#8482; - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/nordic-ware-bundt-loaf-pan-promo/?cm_type=gnav" >
+Nordic Ware Bundt&#174; &amp; Loaf Pans - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/bakeware/bakeware-williams-sonoma/?cm_type=gnav" >
+Williams Sonoma Bakeware - 20% Off
+	</a><br></td></tr></table></div>
+<div id="menu6" >
+<table><tr><td style=" vertical-align: top;">
+<b>Breakfast</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/croissants-bread-pastries/?cm_type=gnav" >
+Croissants &amp; Pastries
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-toppings-honeys-spreads/?cm_type=gnav" >
+Jam, Honey &amp; Syrup
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-breakfast-mixes/?cm_type=gnav" >
+Breakfast Mixes
+</a><br>
+<b>Cheese &amp; Appetizers</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/appetizers-cheese/?cm_type=gnav" >
+Cheese
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/appetizers-hors-doeuvres/?cm_type=gnav" >
+Appetizers &amp; Hors d'Oeuvres
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-fruits-nuts/?cm_type=gnav" >
+Fruits &amp; Nuts
+</a><br>
+<b>Entrees &amp; Sides</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-prepared-meals/?cm_type=gnav" >
+Entrees &amp; Sides
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/sun-basket-meal-kit-delivery/?cm_type=gnav" >
+Sun Basket Meal Kit Delivery
+</a><br>
+<b>Meat &amp; Seafood</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-meat-seafood/?cm_type=gnav" >
+Meat
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/seafood-food/?cm_type=gnav" >
+Seafood
+</a><br>
+<b>Desserts</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-desserts-baked-goods/?cm_type=gnav" >
+Cakes, Cookies &amp; Baked Goods
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-chocolate-candy/?cm_type=gnav" >
+Candy &amp; Chocolate
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-mixes/?cm_type=gnav" >
+Dessert Mixes
+</a><br>
+<b>Coffee, Tea, &amp; Cocktails</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-coffee/?cm_type=gnav" >
+Coffee
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-tea/?cm_type=gnav" >
+Tea
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-cocktail-mixes/?cm_type=gnav" >
+Cocktail Mixes
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-juices/?cm_type=gnav" >
+Juices
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/food/food-hot-chocolate/?cm_type=gnav" >
+Hot Chocolate
+</a><br><b>Sauces, Oils &amp; Vinegars</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/cooking-sauces/?cm_type=gnav" >
+Cooking Sauces
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/oils-vinegars/?cm_type=gnav" >
+Oils &amp; Vinegars
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-condiments/?cm_type=gnav" >
+Condiments
+</a><br>
+<b>Salts, Peppers &amp; Spices</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/spices-seasonings/?cm_type=gnav" >
+Salt &amp; Pepper
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-spices/?cm_type=gnav" >
+Spices
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/rubs-brines/?cm_type=gnav" >
+Rubs &amp; Brines
+</a><br>
+<b>Pasta, Rice &amp; Grains</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/pasta/?cm_type=gnav" >
+Pasta
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-pasta-sauces/?cm_type=gnav" >
+Pasta Sauces
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-rice-grains/?cm_type=gnav" >
+Rice &amp; Grains
+</a><br>
+<b>Baking</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-baking-ingredients/?cm_type=gnav" >
+Baking Ingredients
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-flour/?cm_type=gnav" >
+Flour
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/food/food-mixes-baking/?cm_type=gnav" >
+Baking Mixes
+</a><br><b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-global-inspiration/?cm_type=gnav" >
+Global Inspiration
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/valentines-day/valentines-day-food?cm_type=gnav" >
+Valentine's Day
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-easter/?cm_type=gnav" >
+Easter
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-fortnum-and-mason/?cm_type=gnav" >
+Fortnum &amp; Mason
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-sets/?cm_type=gnav" >
+Gift Sets &amp; Baskets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<b>Sale &amp; Offers</b><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/pantry-promo/?cm_type=gnav" >
+Pantry Essentials - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/cooking-sauces-promo/?cm_type=gnav" >
+Buy 2, Get 20% Off Cooking Sauces
+	</a><br></td></tr></table></div>
+<div id="menu7" >
+	<table><tr><td style=" vertical-align: top;">
+<b>Dinnerware</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-dinnerware-sets/?cm_type=gnav" >
+Dinnerware Collections
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-place-settings/?cm_type=gnav" >
+Place Settings
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-serveware/?cm_type=gnav" >
+Serveware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-plates/?cm_type=gnav" >
+Plates
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bowls/?cm_type=gnav" >
+Bowls
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-coffee-mugs-teacups/?cm_type=gnav" >
+Coffee Mugs &amp; Teacups
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-outdoor-dining/?cm_type=gnav" >
+Outdoor Dinnerware
+</a><br>
+<b>Flatware</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-flatware-place-settings/?cm_type=gnav" >
+Flatware Place Settings
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-flatware-serving/?cm_type=gnav" >
+Serving Pieces
+</a><br>
+<b>Glassware &amp; Bar</b><br>
+
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-glassware-collections/?cm_type=gnav" >
+Glassware Collections
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/bar-glasses/?cm_type=gnav" >
+Bar Glasses
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/bar-wine-glasses/?cm_type=gnav" >
+Wine Glasses
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/bar-glassware-casual/?cm_type=gnav" >
+Casual Glasses
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-outdoor-drinkware/?cm_type=gnav" >
+Outdoor Glassware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-tool/?cm_type=gnav" >
+Bar Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/bar-wine-tool/?cm_type=gnav" >
+Wine Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/bar-glassware-decanters/?cm_type=gnav" >
+Decanters
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/beer-wine-storage/?cm_type=gnav" >
+Beer &amp; Wine Storage
+</a><br>
+<b>Table &amp; Kitchen Linens</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/table-linens-tablecloths/?cm_type=gnav" >
+Tablecloths
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/table-linens-runners/?cm_type=gnav" >
+Runners
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/table-linens-place-mats/?cm_type=gnav" >
+Place Mats
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/table-linens-napkins/?cm_type=gnav" >
+Napkins
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/table-linens-towels/?cm_type=gnav" >
+Kitchen Towels
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/table-linens-chair-pads/?cm_type=gnav" >
+Chair Pads
+</a><br><b>Entertaining Accessories</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-napkin-rings/?cm_type=gnav" >
+Napkin Rings
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-place-card-holders/?cm_type=gnav" >
+Place Card Holders
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-salt-pepper-shakers/?cm_type=gnav" >
+Salt &amp; Pepper Shakers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-cheese-serving/?cm_type=gnav" >
+Cheese Boards &amp; Accessories
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-charger-plates/?cm_type=gnav" >
+Charger Plates
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-coasters-trivets/?cm_type=gnav" >
+Coasters &amp; Trivets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-accessories-decor/?cm_type=gnav" >
+D&#233;cor
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-accessories-candles/?cm_type=gnav" >
+Candles &amp; Candle Holders
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/entertaining-baskets-bowls-trays/?cm_type=gnav" >
+Baskets, Bowls &amp; Trays
+</a><br>
+<b>Shop by Brand</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-williams-sonoma/?cm_type=gnav" >
+Williams Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/open-kitchen/open-kitchen-tabletop-bar/?cm_type=gnav" >
+Williams Sonoma Open Kitchen
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-apilco/?cm_type=gnav" >
+Apilco
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-duraclear/?cm_type=gnav" >
+DuraClear&#174;
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-fortessa/?cm_type=gnav" >
+Fortessa
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-jars-ceramistes/?cm_type=gnav" >
+Jars C&#233;ramistes
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/kate-spade-new-york/?cm_type=gnav" >
+kate spade new york
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-laguiole/?cm_type=gnav" >
+Laguiole
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-la-bianca/?cm_type=gnav" >
+La Bianca
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-le-creuset/?cm_type=gnav" >
+Le Creuset
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-pillivuyt/?cm_type=gnav" >
+Pillivuyt
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-glassware-riedel/?cm_type=gnav" >
+Riedel
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-robert-welch/?cm_type=gnav" >
+Robert Welch
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-glass-schott-zwiesel/?cm_type=gnav" >
+Schott Zwiesel
+	</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-waterford/?cm_type=gnav" >
+Waterford
+</a><br>
+
+<b>Featured</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-glassware-bar-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/new/japanese-table?cm_type=gnav" >
+The Japanese Table
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/valentines-day/valentines-day-glassware-bar?cm_type=gnav" >
+Valentine's Day
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-glassware-easter/?cm_type=gnav" >
+Easter
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-glassware-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-monogram/?cm_type=gnav" >
+Monogram Shop
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-registry-favorite/?cm_type=gnav" >
+Registry Favorites
+</a><br>
+<b>Shop by Collection</b><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-provisions-collection/?cm_type=gnav" >
+Provisions Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/crafthouse-bar-collection/?cm_type=gnav" >
+Crafthouse by Fortessa Bar Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-copper-shop/?cm_type=gnav" >
+Copper Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/new-ws-marble-collection/?cm_type=gnav" >
+Williams-Sonoma Marble Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/restaurant-collection/?cm_type=gnav" >
+Restaurant Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-formal/?cm_type=gnav" >
+Formal Tabletop Collection
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-ws-pantry/?cm_type=gnav" >
+Williams-Sonoma Pantry
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-jacquard-shop/?cm_type=gnav" >
+Jacquard Linens
+</a><br>
+<b>Sale &amp; Offers</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/tabletop-bar-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/tabletop-glassware-bar/citrus-tabletop-promo/?cm_type=gnav" >
+Citrus Collection - 20% Off
+		</a><br></td></tr></table></div>
+	<div id="menu8"  >
+	<table><tr><td style=" vertical-align: top;">
+<b>Soaps &amp; Lotions</b><br>
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/soaps-lotions-fragrance/?cm_type=gnav" >
+View All
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/soaps-lotions-collections/?cm_type=gnav" >
+Collections by Scent
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/soaps-lotions-gift-sets/?cm_type=gnav" >
+Gift Sets
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/hand-dish-soaps-lotions/?cm_type=gnav" >
+Soaps &amp; Lotions
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/cleaning/?cm_type=gnav" >
+Cleaning Essentials
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/candles-fragrance/?cm_type=gnav" >
+Candles &amp; Fragrance
+</a><br>
+<b>Kitchen Linens</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/all-kitchen-linens/?cm_type=gnav" >
+All Kitchen Linens
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/dish-cloths-towels/?cm_type=gnav" >
+Kitchen Towels
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-aprons/?cm_type=gnav" >
+Aprons
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-mitts-potholders/?cm_type=gnav" >
+Oven Mitts &amp; Potholders
+</a><br>
+<b>Cleaning</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/cleaning-supplies/?cm_type=gnav" >
+Cleaning Supplies
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/irons-laundry-care/?cm_type=gnav" >
+Irons &amp; Laundry
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/vacuums/?cm_type=gnav" >
+Vacuums
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/dish-racks-brushes/?cm_type=gnav" >
+Dish Racks &amp; Brushes
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/dusters-floor-care/?cm_type=gnav" >
+Dusters, Brooms &amp; Mops
+		</a><br></td>
+	<td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/homekeeping/fans-air-purifiers/?cm_type=gnav" >
+Fans &amp; Air Purifiers
+</a><br>
+
+<b>Organization &amp; Storage</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/countertop-organization/?cm_type=gnav" >
+Countertop
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/drawer-organization/?cm_type=gnav" >
+Drawer Organizers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-spice-racks/?cm_type=gnav" >
+Spice Racks
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-storage-containers/?cm_type=gnav" >
+Food Storage Containers
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/storage-containers-baskets/?cm_type=gnav" >
+Storage Baskets &amp; Cases
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/ladders-step-stools/?cm_type=gnav" >
+Ladders &amp; Step Stools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/trash-recycling/?cm_type=gnav" >
+Trash &amp; Recycling
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/kitchen-shelving/?cm_type=gnav" >
+Kitchen Shelving
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/kitchen-island-carts/?cm_type=gnav" >
+Kitchen Islands &amp; Carts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-pot-racks/?cm_type=gnav" >
+Pot Racks
+</a><br>
+<b>D&#233;cor &amp; Mats</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-kitchen-mat-doormat/?cm_type=gnav" >
+Mats &amp; Rugs
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-wreaths-trees/?cm_type=gnav" >
+Wreaths
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-wall-decor/?cm_type=gnav" >
+Wall Art &amp; Clocks
+</a><br>
+<b>Shop by Brand</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-miele-electrics/?cm_type=gnav" >
+Miele
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-oxo/?cm_type=gnav" >
+OXO
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-rowenta/?cm_type=gnav" >
+Rowenta
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-simplehuman/?cm_type=gnav" >
+simplehuman&#8482;
+		</a><br></td>
+	<td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-wellness-mats/?cm_type=gnav" >
+WellnessMats&#174;
+</a><br>
+
+<b>Featured</b><br>
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-new/?cm_type=gnav" >
+New Arrivals
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-top-10-gifts/?cm_type=gnav" >
+Top Gifts
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-monogram-shop/?cm_type=gnav" >
+Monogram Shop
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-registry-favorite/?cm_type=gnav" >
+Registry Favorites
+</a><br>
+<b>Shop By Collection</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-shop-ceramic/?cm_type=gnav" >
+Ceramic
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-shop-stainless-steel/?cm_type=gnav" >
+Stainless-Steel
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-shop-marble/?cm_type=gnav" >
+Marble
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-shop-copper/?cm_type=gnav" >
+Copper
+</a><br>
+<b>Sale &amp; Offers</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-sale/?cm_type=gnav" >
+Sale
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/homekeeping/homekeeping-event-promo/?cm_type=gnav" >
+Cleaning &amp; Organizing Essentials - 20% Off
+		</a></td></tr></table></div>
+		<div id="menu9" >
+	<table><tr><td style=" vertical-align: top;"><b>Outdoor Cooking</b><br>
+
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-cookware/?cm_type=gnav" >
+Outdoor Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-grill-tools-accessories/?cm_type=gnav" >
+Grill Tools &amp; Accessories
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-flavor-smoking/?cm_type=gnav" >
+Smoking &amp; Flavor
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-grills-covers/?cm_type=gnav" >
+Grills
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-food-for-the-grill/?cm_type=gnav" >
+Outdoor Food
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-pizza-ovens/?cm_type=gnav" >
+Pizza Ovens
+</a><br>
+<b>Outdoor Entertaining</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-tabletop-dinnerware/?cm_type=gnav" >
+Outdoor Dinnerware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-drinkware/?cm_type=gnav" >
+Outdoor Drinkware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-tabletop-accessories/?cm_type=gnav" >
+Outdoor Table Linens &amp; D&#233;cor
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/food/food-cocktail-mixes/?cm_type=gnav" >
+Cocktail Mixes
+</a><br>
+<b>Outdoor Furniture</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-occasional-furniture/?cm_type=gnav" >
+Lounge Furniture
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-dining-furniture/?cm_type=gnav" >
+Dining Furniture
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-pillows/?cm_type=gnav" >
+Outdoor Pillows
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-rugs/?cm_type=gnav" >
+Outdoor Rugs
+		</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-camping/?cm_type=gnav" >
+Camping
+</a><br>
+
+<b>Homegrown</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-raised-beds-planters/?cm_type=gnav" >
+Raised Beds &amp; Planters
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-garden-tools/?cm_type=gnav" >
+Garden Tools
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-garden-tools-supplies/?cm_type=gnav" >
+Garden Supplies
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-garden-seeds/?cm_type=gnav" >
+Seeds
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-compost/?cm_type=gnav" >
+Compost
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-garden-chicken-coops/?cm_type=gnav" >
+Chicken Coops
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-plants/?cm_type=gnav" >
+Plants
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-beekeeping/?cm_type=gnav" >
+Beekeeping
+		</a><br></td><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-garden-furniture/?cm_type=gnav" >
+Furniture
+</a><br>
+
+<b>Featured</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-top-rated/?cm_type=gnav" >
+Top-Rated
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-top-10-gifts/?cm_type=gnav" >
+Gifts for the Griller
+</a><br>
+<b>Shop by Brand</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-williams-sonoma/?cm_type=gnav" >
+Williams-Sonoma
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-kalamazoo/?cm_type=gnav" >
+Kalamazoo
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/outdoor/outdoor-pizzeria-pronto/?cm_type=gnav" >
+Pizzeria Pronto
+</a><br>
+<b>Sale &amp; Offers</b><br>
+		</td></tr></table></div>
+	<div id="menu10" >
+	<table><tr><td style=" vertical-align: top;">
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/?cm_type=gnav">
+Sale &amp; Offers
+</a><br><b>Sale</b><br>
+
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/view-all-sale/?cm_type=gnav" >
+View All
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/sale-holiday-offers/?cm_type=gnav" >
+Holiday
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/sale-cookware/?cm_type=gnav" >
+Cookware
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/sale-cutlery/?cm_type=gnav" >
+Cutlery
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/sale-electrics/?cm_type=gnav" >
+Electrics
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/sale-cooks-tools/?cm_type=gnav" >
+Cooks' Tools
+</a><br>	
+		</td></tr></table></div>
+	<div id="menu11"  >
+<b>Outlet</b><br>
+
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/sale-outlet-view-all/?cm_type=gnav" >
+View All
+</a><br>
+
+<b>Limited Time Offers</b><br>
+
+
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/all-clad-special-values-offers/?cm_type=gnav" >
+All-Clad Favorites - Up to 45% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-ac-slow-cooker/?cm_type=gnav" >
+Select All-Clad Slow Cookers - Up to 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-breville-crispy-pizza/?cm_type=gnav" >
+Breville Pizza Maker - Now $99.95
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-calphalon-breakfast-promo/?cm_type=gnav" >
+Calphalon Breakfast Favorites - Over 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-chefschoice-sharpener/?cm_type=gnav" >
+Chef'sChoice Pro Manual Sharpener - 20% off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-citrus-tabletop/?cm_type=gnav" >
+Citrus Collection - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/homekeeping-event-offers/?cm_type=gnav" >
+Cleaning &amp; Organizing Essentials - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-espresso-maker/?cm_type=gnav" >
+Delonghi Lattissima Espresso Maker - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/global-cutlery-offers/?cm_type=gnav" >
+Global Cutlery - Up to 55% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-airfryer-promo/?cm_type=gnav" >
+Philips Avance Airfryer - 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-kitchenaid-multicookers/?cm_type=gnav" >
+KitchenAid&#174; Multicookers - Over 45% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-electrics-kitchenaid/?cm_type=gnav" >
+KitchenAid&#174; Pro Line - Up to 35% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-fruit-vegetable-tools/?cm_type=gnav" >
+Fruit &amp; Veggie Tools - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-le-creuset-promo/?cm_type=gnav" >
+Le Creuset Favorites - Up to 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/nordic-ware-bundt-loaf-pan-offer/?cm_type=gnav" >
+Nordic Ware Bundt&#174; &amp; Loaf Pans - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-pantry-promo/?cm_type=gnav" >
+Pantry Essentials - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/nespresso-promo-offers/?cm_type=gnav" >
+Select Nespresso Machines - 50% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/shun-favorites-offers/?cm_type=gnav" >
+Shun Cutlery - Up to 55% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/offers-spiralizers-promo/?cm_type=gnav" >
+Spiralizers - Up to 40% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/williams-sonoma-bakeware-offers/?cm_type=gnav" >
+Williams Sonoma Bakeware - 20% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/wusthof-values-offers/?cm_type=gnav" >
+W&#252;sthof Cutlery - Up to 65% Off
+</a><br>
+<a href="http://www.williams-sonoma.com/shop/sale-special-offer/zwilling-values-offers/?cm_type=gnav" >
+Zwilling Cutlery - Up to 65% Off
+</a><br>
+</div>
+ 
+<!-- Main page start -->
+</p>
+<p><div id="breadcrumbs">
+<a href="http://www.williams-sonoma.com/?cm_type=gnav"> Home </a>> <a href="http://www.williams-sonoma.com/shop/homekeeping/?cm_type=gnav">Homekeeping</a> >
+<a href="http://www.williams-sonoma.com/search/results.html?words=aprons&cm_sp=HeaderLinks-_-OnsiteSearch-_-MainSite&cm_type=OnsiteSearch"> Aprons</a >> Adult Aprons > Williams-Sonoma Classic Apron, French <div class="colortext" style="display: inline;">Blue</div></div></p>
+<table>
+<tr>
+<td width="60%" style="text-align:center; vertical-align: top;"menu > 
+	<img src="assets/product-large-a.jpg" id="bigpicture">
+<br>
+	<img src="assets/product-small-a.jpg" border="3" onclick="choose('Blue');" id="thumbnailBlue" style="display: inline;" >
+	<img src="assets/product-small-b.jpg" onclick="choose('Striped');" id="thumbnailStriped" style="display: inline;" >
+	<img src="assets/product-small-c.jpg" onclick="choose('White');" id="thumbnailWhite" style="display: inline;" >
+	<img src="assets/product-small-d.jpg" onclick="choose('Pink');" id="thumbnailPink" style="display: inline;" >
+
+</td>
+<td style="vertical-align: top;" >
+	<p><div class="title">Williams-Sonoma Classic Apron, French <div class="colortext" style="display: inline;">Blue</div></div></p>
+
+<p><div id="description">A generously-sized apron is a necessity in any kitchen, and ours will brighten yours with lively color.  Sewn of thick cotton, it can be personalized or monogrammed with up to nine characcters, all the same height, embroidered in your choice of color.  An apron of this quality makes a welcome gift for any cook.</div>
+<p><ul>
+	<li>Durable 100% cotton construction.</li>
+<li>Adjustable neckband ensures a good fit.</li>
+<li>Roomy front pockets hold small tools.</li>
+<li>Machine-wash.</li>
+</ul>
+<div class="title">$19.95</div>
+<p>
+<form action="added-to-cart.html" method="get">
+
+	<p><input type="number" name="quantity" pattern="[0-9]*" min="0" max="99" maxlength="2" placeholder="QTY" value="1" data-addtocart="{sku:'5314559',groupId:'williams-sonoma-chambray-apron-navy',catalog:'5'}"></p>
+	<input type="hidden" name="color" id="colorfield" value="Blue">
+	<p>
+	<input type="submit" value="" style="background:url(assets/button-add-to-cart.png) no-repeat;  height: 40px; width:150px;" />
+	</p>
+</form>
+<hr>
+<p><div id="section1" onclick="toggle('section1');"> 
+	<div id="section1collapsedarrow" style="display: none;" ><img src="assets/arrow-collapsed.png" ></div>
+	<div id="section1expandedarrow"><img src="assets/arrow-expanded.png" ></div>
+	&nbsp;<div id="section1title">EXPANDED</div>
+<div id="section1text"><p>This section is expanded.  This section can be collapsed by clicking on the "Expanded" text.  This section is expanded.  This section can be collapsed by clicking on the "Expanded" text.  </p>
+	</div></div>
+<p><div id="section2" onclick="toggle('section2');" > 
+	<div id="section2collapsedarrow" style="display: none;"><img src="assets/arrow-collapsed.png" ></div>
+	<div id="section2expandedarrow"><img src="assets/arrow-expanded.png" ></div>
+	&nbsp;<div id="section2title">EXPANDED</div>
+	<div id="section2text"><p>This section is expanded.  This section can be collapsed by clicking on the "Expanded" text.  This section is expanded.  This section can be collapsed by clicking on the "Expanded" text.  </p>
+	</div>
+</div>
+<p><div id="section3" onclick="toggle('section3');"> 
+	<div id="section3collapsedarrow" style="display: none;" ><img src="assets/arrow-collapsed.png" ></div>
+	<div id="section3expandedarrow"><img src="assets/arrow-expanded.png" ></div>
+	&nbsp;<div id="section3title">EXPANDED</div>
+	<div id="section3text"><p>This section is expanded.  This section can be collapsed by clicking on the "Expanded" text.  This section is expanded.  This section can be collapsed by clicking on the "Expanded" text.  </p>
+	</div>
+</div>
+	</p><hr>
+</td>
+</tr>
+</table>
+<p><center>&copy; 2017 Williams-Sonoma Inc., All Rights Reserved | <a href="http://www.williams-sonoma.com/customer-service/legal-statement.html#terms">Terms and Conditions</a> <span style="color: #e81818">(Updated March 2016)</span> | <a href="http://www.williams-sonoma.com/customer-service/legal-statement.html#privacy">Privacy Policy</a> | <a href="http://www.williams-sonoma.com/customer-service/legal-statement.html#legal">Legal Statement</a></center></p>
+	</body>
+</html>
+	

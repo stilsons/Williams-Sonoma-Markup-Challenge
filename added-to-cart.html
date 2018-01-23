@@ -1,0 +1,69 @@
+<html>
+<head>
+<script type="text/javascript">
+function getParms() {
+  var query = location.search.substr(1);
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+   // alert(item[0] + " = " + result[item[0]]);
+  });
+  return result;
+}
+</script>
+</head>
+<body>
+<h2>You've just added the following to your basket:</h2>
+<p>
+<table cellpadding="25">
+<tr>
+<td>
+<script>
+ var array = getParms();
+ var letter = "a";
+ if (array["color"] == "Blue") { letter = "a"; }
+ if (array["color"] == "Striped") { letter = "b"; }
+ if (array["color"] == "White") { letter = "c"; }
+ if (array["color"] == "Pink") { letter = "d"; }
+ document.write("<img src=\"assets/product-small-" + letter + ".jpg\">");
+</script>
+</td>
+<td><b>Williams Sonoma Classic Apron, French
+<script>
+	var array = getParms();
+	document.write(array["color"]);
+</script>
+ </b><br>
+Quantity: <script>
+var array = getParms();
+document.write(array["quantity"]);
+</script><br>
+Price: $19.95 each</td>
+<td><b>Basket Summary:</b><br>
+Total Items in Basket:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script>
+var array = getParms();
+document.write(array["quantity"]);
+</script>
+<br>
+Merchandise Subtotal: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$
+<script>
+	var subtotal = 0;
+	subtotal = parseInt(array["quantity"], 10) * 19.95;
+	document.write(parseFloat(subtotal).toPrecision(5));
+</script>
+
+<br><br>
+<img src="assets/express-checkout.png">
+<br><img src="assets/checkout.png">
+<br><br><a href="http://www.williams-sonoma.com">Continue shopping</a><br><br>
+Subtotal does not include shipping and processing, gift wrap, discounts or tax.</td>
+</tr>
+</table>
+
+<h3>Customers who bought this item also bought:</h3>
+<img src="assets/added-to-cart.png"><br>
+
+</body>
+</html>
